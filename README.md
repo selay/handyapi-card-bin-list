@@ -31,8 +31,10 @@ Below are quick start guides for making API requests using different programming
 
 In this example, **535316** is the first 6 digits of the credit card to lookup. 
 
+**Note:** Including the "referrer" (Referer in PHP) header with your API requests is highly encouraged.  It serves a key role in enabling us to provide you with targeted support. It may also help reduce the chance of your request being blocked.
+
 ### API Response in the following JSON format. 
-You can use Typoe to tell iof a card is a debit or credit card. 
+You can use Type to tell if a card is a debit or credit card. 
 ```
 {
   "Status": "SUCCESS",
@@ -69,8 +71,8 @@ $options = [
     ]
 ];
 $context = stream_context_create($options);
-$response = file_get_contents($url, false, $context);
-$data = json_decode($response, true);
+$response = @file_get_contents($url, false, $context);
+$data = @json_decode($response,true);
 print_r($data);
 ```
 
