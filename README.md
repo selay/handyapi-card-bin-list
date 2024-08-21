@@ -197,15 +197,15 @@ task.resume()
 ### TypeScript
 
 ```typescript
-axios.get('https://data.handyapi.com/bin/535316', {
-    headers: {
-        'Referer': 'your-domain'
-    }
-}).then(response => {
-    console.log(response.data);
-}).catch(error => {
-    console.error('Error:', error);
-});
+axios.get('https://data.handyapi.com/bin/535316')
+    .then(response => {
+      //Use JSON here
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 ```
 
 ### Dart
