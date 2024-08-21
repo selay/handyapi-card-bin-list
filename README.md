@@ -85,7 +85,8 @@ print_r($data);
 fetch('https://data.handyapi.com/bin/535316')
   .then(response => response.json())
   .then(data => {
-    // use JSON data here
+    //use JSON here
+      console.log(data)
   })
   .catch();
 
