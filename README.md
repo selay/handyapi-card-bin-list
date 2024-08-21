@@ -19,6 +19,26 @@ Welcome to the official GitHub repository for the Handy API's BIN List service. 
 
 Below are quick start guides for making API requests using different programming languages. Please note that these examples are provided for reference and may require adjustments to work in your specific environment. They have not been tested, so please ensure you validate functionality before use in production:
 
+### Response
+```
+{
+  "Status": "SUCCESS",
+  "Scheme": "MASTERCARD",
+  "Type": "CREDIT",
+  "Issuer": "COMMONWEALTH BANK OF AUSTRALIA",
+  "CardTier": "PLATINUM MASTERCARD",
+  "Country": {
+    "A2": "AU",
+    "A3": "AUS",
+    "N3": "036",
+    "ISD": "61",
+    "Name": "Australia",
+    "Cont": "Oceania"
+  },
+  "Luhn": true
+}
+```
+
 ### cURL
 
 ```bash
