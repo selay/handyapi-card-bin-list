@@ -11,9 +11,9 @@ Welcome to the official GitHub repository for the Handy API Free BIN List servic
 
 ## Use Cases
 
-- **Surcharge Adjustment**: Easily adjust surcharge rates for different card types, particularly useful as credit cards often incur higher fees.
-- **Card Verification/Fraud Detection**: Verify card details such as the issuing bank, card type, and country of issuance, enhancing transaction security.
-- **Geographic Customization**: Tailor experiences based on the card’s country of issuance.
+- **Surcharge Adjustment**: Easily adjust surcharge rates for different card types, particularly useful as credit cards often incur higher fees. Debit vs credit card is the most common use case we see. 
+- **Card Verification**: Verify card details such as the issuing bank, card type, and country of issuance, enhancing transaction security.
+- **Fraud Detection/Geographic Customization**: BIN data can be used to enhance fraud detection such as checking country of issuance.
 
 ## 6-digit and 8-digit BINs
 
