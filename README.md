@@ -21,6 +21,10 @@ The BIN (Bank Identification Number) has been in transition from a 6-digit to an
 
 Our API is at the forefront of this change, supporting both 6-digit and 8-digit BINs. This means you can rely on our API for up-to-date, accurate identification of card issuers and types, whether your systems are currently using the traditional 6-digit BINs or have transitioned to the newer 8-digit format.
 
+Note 6-digit BIN is still widely used and is reasonably accurate for most purposes. 
+
+**NEVER** send the full credit card number! 
+
 ## Getting Started
 
 Below are quick start guides for making API requests using different programming languages. Please note that these examples are provided for reference and may require adjustments to work in your specific environment. They have not been tested, so please ensure you validate functionality before use in production:
