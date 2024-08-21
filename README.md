@@ -1,6 +1,6 @@
 # Handy API - BIN List Lookup API
 
-Welcome to the official GitHub repository for the Handy API's BIN List service. This API provides enterprise-grade, highly available, regularly updated data to help you verify and distinguish credit and debit card details using the first digits of the card number. It’s designed for both backend and frontend integrations, ensuring flexibility and ease of use for developers across the globe.
+Welcome to the official GitHub repository for the Handy API Free BIN List service. This API provides enterprise-grade, highly available, regularly updated data to help you verify and distinguish credit and debit card details using the first digits of the card number. It’s designed for both backend and frontend integrations, ensuring flexibility and ease of use for developers across the globe.
 
 ## Features
 
