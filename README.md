@@ -27,7 +27,7 @@ Note 6-digit BIN is still widely used and is reasonably accurate for most purpos
 
 ## Referer
 
-Including the Referer (not referrer) header with your API requests is highly encouraged. However, if you're making the request from the frontend (e.g., using JavaScript in a browser), the browser will automatically include the Referer header, so you don't need to set it manually. The Referer header helps us provide targeted support and may also reduce the chance of your request being blocked.
+Including the Referer (not referrer) header with your API requests is highly encouraged. However, if you're making the request from the frontend (e.g., using JavaScript in a browser), the browser will automatically include the Referer header, so you don't need to set it manually. The Referer header helps us provide support when you reach out and may also reduce the chance of your request being blocked.
 
 ## Getting Started
 
