@@ -15,11 +15,18 @@ Welcome to the official GitHub repository for the Handy API's BIN List service. 
 - **Card Verification**: Verify card details such as the issuing bank, card type, and country of issuance, enhancing transaction security.
 - **Geographic Customization**: Tailor experiences based on the card’s country of issuance.
 
+## 6-digit and 8-digit BINs
+
+The BIN (Bank Identification Number) has been in transition from a 6-digit to an 8-digit format to accommodate a growing number of issuers and products. The 6-digit BIN has been the industry standard for years, identifying the institution that issued the card and the card type. However, to ensure a greater supply of numbers and reduce the risk of duplication, the industry is moving towards 8-digit BINs. It is a slow process and 6-digit version is still most common.
+
+Our API is at the forefront of this change, supporting both 6-digit and 8-digit BINs. This means you can rely on our API for up-to-date, accurate identification of card issuers and types, whether your systems are currently using the traditional 6-digit BINs or have transitioned to the newer 8-digit format.
+
 ## Getting Started
 
 Below are quick start guides for making API requests using different programming languages. Please note that these examples are provided for reference and may require adjustments to work in your specific environment. They have not been tested, so please ensure you validate functionality before use in production:
 
-### Response
+### API Response in the following JSON format. 
+You can use Typoe to tell iof a card is a debit or credit card. 
 ```
 {
   "Status": "SUCCESS",
