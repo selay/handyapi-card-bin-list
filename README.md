@@ -31,7 +31,7 @@ Below are quick start guides for making API requests using different programming
 
 In this example, **535316** is the first 6 digits of the credit card to lookup. 
 
-**Note:** Including the "referrer" (Referer in PHP) header with your API requests is highly encouraged.  It serves a key role in enabling us to provide you with targeted support. It may also help reduce the chance of your request being blocked.
+**Note:** Including the Referer (not referrer) header with your API requests is highly encouraged.  It serves a key role in enabling us to provide you with targeted support. It may also help reduce the chance of your request being blocked.
 
 ### API Response in the following JSON format. 
 You can use Type to tell if a card is a debit or credit card. 
@@ -57,7 +57,7 @@ You can use Type to tell if a card is a debit or credit card.
 ### cURL
 
 ```bash
-curl -H "referrer: your-domain" "https://data.handyapi.com/bin/535316"
+curl -H "Referer: your-domain" "https://data.handyapi.com/bin/535316"
 ```
 
 ### PHP
@@ -80,7 +80,7 @@ print_r($data);
 
 ```javascript
 fetch('https://data.handyapi.com/bin/535316', {
-    headers: { 'referrer': 'your-domain' }
+    headers: { 'Referer': 'your-domain' }
 })
 .then(response => response.json())
 .then(data => console.log(data))
@@ -93,7 +93,7 @@ fetch('https://data.handyapi.com/bin/535316', {
 ```python
 import requests
 
-response = requests.get('https://data.handyapi.com/bin/535316', headers={'referrer': 'your-domain'})
+response = requests.get('https://data.handyapi.com/bin/535316', headers={'Referer': 'your-domain'})
 
 if response.status_code == 200:
   data = response.json()
@@ -111,7 +111,7 @@ String url = "https://data.handyapi.com/bin/535316";
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create(url))
-        .header("referrer", "your domain")
+        .header("Referer", "your domain")
         .build();
 
 HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -127,7 +127,7 @@ System.out.println(jsonString);
 
 url := "https://data.handyapi.com/bin/535316"
 req, _ := http.NewRequest("GET", url, nil)
-req.Header.Set("referrer", "your_domain")
+req.Header.Set("Referer", "your_domain")
 client := &http.Client{}
 resp, _ := client.Do(req)
 defer resp.Body.Close()
@@ -145,7 +145,7 @@ int main() {
     curl = curl_easy_init();
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "https://data.handyapi.com/bin/535316");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "referrer: your-domain");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "Referer: your-domain");
 
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
@@ -162,7 +162,7 @@ int main() {
 
 ```ruby
 uri = URI("https://data.handyapi.com/bin/535316")
-req = Net::HTTP::Get.new(uri, 'referrer' => 'your-domain')
+req = Net::HTTP::Get.new(uri, 'Referer' => 'your-domain')
 res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
 puts res.body
 
@@ -175,7 +175,7 @@ puts res.body
 
 let url = URL(string: "https://data.handyapi.com/bin/535316")!
 var request = URLRequest(url: url)
-request.addValue("your-domain", forHTTPHeaderField: "referrer")
+request.addValue("your-domain", forHTTPHeaderField: "Referer")
 
 let task = URLSession.shared.dataTask(with: request) { data, response, error in
     guard let data = data, error == nil else {
@@ -195,7 +195,7 @@ task.resume()
 ```typescript
 axios.get('https://data.handyapi.com/bin/535316', {
     headers: {
-        'referrer': 'your-domain'
+        'Referer': 'your-domain'
     }
 }).then(response => {
     console.log(response.data);
@@ -208,7 +208,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 
 ```dart
  var url = Uri.parse('https://data.handyapi.com/bin/535316');
-    var response = await http.get(url, headers: {'referrer': 'your-domain'});
+    var response = await http.get(url, headers: {'Referer': 'your-domain'});
     if (response.statusCode == 200) {
         print(response.body);
     } else {
@@ -223,7 +223,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
  async fn main() -> Result<(), reqwest::Error> {
     let client = reqwest::Client::new();
     let res = client.get("https://data.handyapi.com/bin/535316")
-        .header("referrer", "your-domain")
+        .header("Referer", "your-domain")
         .send()
         .await?;
 
@@ -238,7 +238,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 ```kotlin
  val url = URL("https://data.handyapi.com/bin/535316")
     with(url.openConnection() as HttpURLConnection) {
-        setRequestProperty("referrer", "your-domain")
+        setRequestProperty("Referer", "your-domain")
         println(inputStream.bufferedReader().readText())
     }
 ```
@@ -248,7 +248,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 ```r
 library(httr)
 
-response <- GET("https://data.handyapi.com/bin/535316", add_headers(referrer = "your-domain"))
+response <- GET("https://data.handyapi.com/bin/535316", add_headers(Referer = "your-domain"))
 content <- content(response, "text")
 print(content)
 
@@ -259,7 +259,7 @@ print(content)
 ```perl
 my $url = "https://data.handyapi.com/bin/535316";
 my $ua = LWP::UserAgent->new;
-$ua->default_header('referrer' => 'your-domain');
+$ua->default_header('Referer' => 'your-domain');
 
 my $response = $ua->get($url);
 
