@@ -29,6 +29,8 @@ Note 6-digit BIN is still widely used and is reasonably accurate for most purpos
 
 Below are quick start guides for making API requests using different programming languages. Please note that these examples are provided for reference and may require adjustments to work in your specific environment. They have not been tested, so please ensure you validate functionality before use in production:
 
+In this example, **535316** is the first 6 digits of the credit card to lookup. 
+
 ### API Response in the following JSON format. 
 You can use Typoe to tell iof a card is a debit or credit card. 
 ```
