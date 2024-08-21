@@ -25,13 +25,16 @@ Note 6-digit BIN is still widely used and is reasonably accurate for most purpos
 
 **NEVER** send the full credit card number! 
 
+## Referer
+
+Including the Referer (not referrer) header with your API requests is highly encouraged. However, if you're making the request from the frontend (e.g., using JavaScript in a browser), the browser will automatically include the Referer header, so you don't need to set it manually. The Referer header helps us provide targeted support and may also reduce the chance of your request being blocked.
+
 ## Getting Started
 
 Below are quick start guides for making API requests using different programming languages. Please note that these examples are provided for reference and may require adjustments to work in your specific environment. They have not been tested, so please ensure you validate functionality before use in production:
 
 In this example, **535316** is the first 6 digits of the credit card to lookup. 
 
-**Note:** Including the Referer (not referrer) header with your API requests is highly encouraged.  It serves a key role in enabling us to provide you with targeted support. It may also help reduce the chance of your request being blocked.
 
 ### API Response in the following JSON format. 
 You can use Type to tell if a card is a debit or credit card. 
@@ -79,12 +82,12 @@ print_r($data);
 ### JavaScript
 
 ```javascript
-fetch('https://data.handyapi.com/bin/535316', {
-    headers: { 'Referer': 'your-domain' }
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
+fetch('https://data.handyapi.com/bin/535316')
+  .then(response => response.json())
+  .then(data => {
+    // use JSON data here
+  })
+  .catch();
 
 ```
 
