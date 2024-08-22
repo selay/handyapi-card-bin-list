@@ -82,7 +82,12 @@ print_r($data);
 ### JavaScript
 
 ```javascript
-fetch('https://data.handyapi.com/bin/535316')
+fetch('https://data.handyapi.com/bin/535316', {
+    headers: {
+        // 'Referer': 'your-domain'
+        // not needed if used in frontend 
+    }
+}) 
   .then(response => response.json())
   .then(data => {
     //use JSON here
@@ -197,14 +202,17 @@ task.resume()
 ### TypeScript
 
 ```typescript
-axios.get('https://data.handyapi.com/bin/535316')
-    .then(response => {
-      //Use JSON here
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+axios.get('https://data.handyapi.com/bin/535316', {
+    headers: {
+        // 'Referer': 'your-domain'
+        // no header needed if used in frontend
+    }
+}).then(response => {
+    console.log(response.data);
+}).catch(error => {
+    console.error('Error:', error);
+});
+
 
 ```
 
