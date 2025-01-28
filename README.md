@@ -68,11 +68,12 @@ curl -H "x-api-key: your key" "https://data.handyapi.com/bin/535316"
 ### PHP
 
 ```php
+$apiKey='your key';
 $url = "https://data.handyapi.com/bin/535316";
 $options = [
     "http" => [
         "method" => "GET",
-        "header" => "x-api-key: your key\r\n"
+        "header" => "x-api-key: $apiKey \r\n"
     ]
 ];
 $context = stream_context_create($options);
