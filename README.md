@@ -25,9 +25,11 @@ Note 6-digit BIN is still widely used and is reasonably accurate for most purpos
 
 **NEVER** send the full credit card number! 
 
-## Referer
+## API KEY to be sent in the x-api-key header
 
-Including the Referer (not referrer) header with your API requests is highly encouraged. However, if you're making the request from the frontend (e.g., using JavaScript in a browser), the browser will automatically include the Referer header, so you don't need to set it manually. The Referer header helps us provide support when you reach out and may also reduce the chance of your request being blocked.
+When you sign up, you get two keys under [API keys](https://www.handyapi.com): Publishable (Frontend) API Key and Secret (Backend) API Key. The key difference between the two is the way you use them: 
+- **Publishable (Frontend) API Key**: The Publishable Key can be safely used publicly on the client side, such as in JavaScript, to make API calls. To protect your usage quota, you can whitelist your domains in the dashboard, ensuring that others cannot use your key.
+- **Secret (Backend) API Key**: This key must be secret and stored securely in your web or mobile app's server-side code. 
 
 ## Getting Started
 
@@ -60,7 +62,7 @@ You can use Type to tell if a card is a debit or credit card.
 ### cURL
 
 ```bash
-curl -H "Referer: your-domain" "https://data.handyapi.com/bin/535316"
+curl -H "x-api-key: your key" "https://data.handyapi.com/bin/535316"
 ```
 
 ### PHP
@@ -70,7 +72,7 @@ $url = "https://data.handyapi.com/bin/535316";
 $options = [
     "http" => [
         "method" => "GET",
-        "header" => "Referer: your_domain\r\n"
+        "header" => "x-api-key: your key\r\n"
     ]
 ];
 $context = stream_context_create($options);
@@ -84,8 +86,7 @@ print_r($data);
 ```javascript
 fetch('https://data.handyapi.com/bin/535316', {
     headers: {
-        // 'Referer': 'your-domain'
-        // not needed if used in frontend 
+         'x-api-key': 'your frontend key'
     }
 }) 
   .then(response => response.json())
@@ -102,7 +103,7 @@ fetch('https://data.handyapi.com/bin/535316', {
 ```python
 import requests
 
-response = requests.get('https://data.handyapi.com/bin/535316', headers={'Referer': 'your-domain'})
+response = requests.get('https://data.handyapi.com/bin/535316', headers={'x-api-key': 'your key'})
 
 if response.status_code == 200:
   data = response.json()
@@ -120,7 +121,7 @@ String url = "https://data.handyapi.com/bin/535316";
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create(url))
-        .header("Referer", "your domain")
+        .header("x-api-key", "your key")
         .build();
 
 HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -136,7 +137,7 @@ System.out.println(jsonString);
 
 url := "https://data.handyapi.com/bin/535316"
 req, _ := http.NewRequest("GET", url, nil)
-req.Header.Set("Referer", "your_domain")
+req.Header.Set("x-api-key", "your key")
 client := &http.Client{}
 resp, _ := client.Do(req)
 defer resp.Body.Close()
@@ -154,7 +155,7 @@ int main() {
     curl = curl_easy_init();
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "https://data.handyapi.com/bin/535316");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "Referer: your-domain");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "x-api-key: your key");
 
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
@@ -171,7 +172,7 @@ int main() {
 
 ```ruby
 uri = URI("https://data.handyapi.com/bin/535316")
-req = Net::HTTP::Get.new(uri, 'Referer' => 'your-domain')
+req = Net::HTTP::Get.new(uri, 'x-api-key', 'your key')
 res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
 puts res.body
 
@@ -184,7 +185,7 @@ puts res.body
 
 let url = URL(string: "https://data.handyapi.com/bin/535316")!
 var request = URLRequest(url: url)
-request.addValue("your-domain", forHTTPHeaderField: "Referer")
+request.addValue("your key", forHTTPHeaderField: "x-api-key")
 
 let task = URLSession.shared.dataTask(with: request) { data, response, error in
     guard let data = data, error == nil else {
@@ -204,8 +205,7 @@ task.resume()
 ```typescript
 axios.get('https://data.handyapi.com/bin/535316', {
     headers: {
-        // 'Referer': 'your-domain'
-        // no header needed if used in frontend
+         'x-api-key': 'your frontend key'
     }
 }).then(response => {
     console.log(response.data);
@@ -220,7 +220,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 
 ```dart
  var url = Uri.parse('https://data.handyapi.com/bin/535316');
-    var response = await http.get(url, headers: {'Referer': 'your-domain'});
+    var response = await http.get(url, headers: {'x-api-key': 'your key'});
     if (response.statusCode == 200) {
         print(response.body);
     } else {
@@ -235,7 +235,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
  async fn main() -> Result<(), reqwest::Error> {
     let client = reqwest::Client::new();
     let res = client.get("https://data.handyapi.com/bin/535316")
-        .header("Referer", "your-domain")
+        .header("x-api-key", "your key")
         .send()
         .await?;
 
@@ -250,7 +250,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 ```kotlin
  val url = URL("https://data.handyapi.com/bin/535316")
     with(url.openConnection() as HttpURLConnection) {
-        setRequestProperty("Referer", "your-domain")
+        setRequestProperty("x-api-key", "your key")
         println(inputStream.bufferedReader().readText())
     }
 ```
@@ -260,7 +260,7 @@ axios.get('https://data.handyapi.com/bin/535316', {
 ```r
 library(httr)
 
-response <- GET("https://data.handyapi.com/bin/535316", add_headers(Referer = "your-domain"))
+response <- GET("https://data.handyapi.com/bin/535316", add_headers(`x-api-key` = "your key"))
 content <- content(response, "text")
 print(content)
 
@@ -271,7 +271,7 @@ print(content)
 ```perl
 my $url = "https://data.handyapi.com/bin/535316";
 my $ua = LWP::UserAgent->new;
-$ua->default_header('Referer' => 'your-domain');
+$ua->default_header('x-api-key', 'your key');
 
 my $response = $ua->get($url);
 
