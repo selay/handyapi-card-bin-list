@@ -27,7 +27,7 @@ Note 6-digit BIN is still widely used and is reasonably accurate for most purpos
 
 ## API KEY to be sent in the x-api-key header
 
-When you sign up, you get two keys under [API keys](https://www.handyapi.com): Publishable (Frontend) API Key and Secret (Backend) API Key. The key difference between the two is the way you use them: 
+When you sign up, you get two keys under [API keys](https://www.handyapi.com/dashboard): Publishable (Frontend) API Key and Secret (Backend) API Key. The key difference between the two is the way you use them: 
 - **Publishable (Frontend) API Key**: The Publishable Key can be safely used publicly on the client side, such as in JavaScript, to make API calls. To protect your usage quota, you can whitelist your domains in the dashboard, ensuring that others cannot use your key.
 - **Secret (Backend) API Key**: This key must be secret and stored securely in your web or mobile app's server-side code. 
 
