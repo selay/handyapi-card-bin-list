@@ -287,4 +287,5 @@ if ($response->is_success) {
 ## Support
 
 For support, feedback, or more information, please visit [HandyApi.com](https://www.handyapi.com) or contact us directly through GitHub Issues.
+Other APIs are also available, including [Australia Postcode API](https://www.handyapi.com/au-postcodes), [Australia BSB Number API](https://www.handyapi.com/bsb-numbers), [IP Geolocation API](https://www.handyapi.com/ip-geolocation), [Currency Rates API](https://www.handyapi.com/currency-rates).
 
