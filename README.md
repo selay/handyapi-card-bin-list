@@ -95,7 +95,7 @@ fetch('https://data.handyapi.com/bin/535316', {
     //use JSON here
       console.log(data)
   })
-  .catch();
+  .catch(()=>{});
 
 ```
 
