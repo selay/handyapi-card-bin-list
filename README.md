@@ -5,7 +5,7 @@ Welcome to the official GitHub repository for the Handy API Free BIN List servic
 ## Features
 
 - **Broad Scheme Support**: Supports cards issued under Visa, Mastercard, American Express, and other popular schemes.
-- **Comprehensive Data**: Near 1,000,000 records covering a wide range of credit and debit cards.
+- **Comprehensive Data**: Over 3,000,000 records covering a wide range of credit and debit cards.
 - **Regular Updates**: Our databases are continually updated to ensure the most accurate and current information.
 - **Free Access**: Offered for free under a fair use policy, making it suitable for most projects.
 
