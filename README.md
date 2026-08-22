@@ -15,15 +15,41 @@ Welcome to the official GitHub repository for the Handy API Free BIN List servic
 - **Card Verification**: Verify card details such as the issuing bank, card type, and country of issuance, enhancing transaction security.
 - **Fraud Detection/Geographic Customization**: BIN data can be used to enhance fraud detection such as checking country of issuance.
 
+ 
+
 ## 6-digit and 8-digit BINs
 
-The BIN (Bank Identification Number) has been in transition from a 6-digit to an 8-digit format to accommodate a growing number of issuers and products. The 6-digit BIN has been the industry standard for years, identifying the institution that issued the card and the card type. However, to ensure a greater supply of numbers and reduce the risk of duplication, the industry is moving towards 8-digit BINs. It is a slow process and 6-digit version is still most common.
+The BIN (Bank Identification Number) has been transitioning from a 6-digit to an 8-digit format to accommodate the growing number of card issuers and products.
 
-Our API is at the forefront of this change, supporting both 6-digit and 8-digit BINs. This means you can rely on our API for up-to-date, accurate identification of card issuers and types, whether your systems are currently using the traditional 6-digit BINs or have transitioned to the newer 8-digit format.
+Our API supports both 6-digit and 8-digit BINs, allowing you to work with legacy 6-digit BINs as well as the newer 8-digit standard.
 
-Note 6-digit BIN is still widely used and is reasonably accurate for most purposes. 
 
-**NEVER** send the full credit card number! 
+### 6-digit BIN lookups and country preference
+
+A 6-digit BIN may contain multiple underlying ranges assigned to different issuers, countries, or card products. This means there can be several possible matches for the same 6-digit BIN.
+
+For 6-digit BIN lookups, our model attempts to select the most relevant result for you automatically. It considers contextual information such as your previous lookup patterns and other signals, including the geographic location from which your API requests originate.
+
+Although this works well in most cases, the automatically selected result may not always be the one you expect — particularly if you are processing cards from customers in multiple countries.
+
+If you only have a 6-digit BIN and know the expected country, you can optionally specify the **preferred country** using its two-letter country code. This overrides our automatic country preference and gives matching BIN ranges from your specified country higher precedence.
+
+For example, a standard lookup:
+
+```text
+https://data.handyapi.com/bin/535316
+```
+
+To prefer matching ranges from Australia:
+
+```text
+https://data.handyapi.com/bin/535316/AU
+```
+
+In this example, AU tells the API to give preference to Australian matches rather than relying on our automatic selection.
+
+For the highest accuracy, we still recommend using the full 8-digit BIN whenever available.
+
 
 ## API KEY to be sent in the x-api-key header
 
