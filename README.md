@@ -28,7 +28,7 @@ Our API supports both 6-digit and 8-digit BINs, allowing you to work with legacy
 
 A 6-digit BIN may contain multiple underlying ranges assigned to different issuers, countries, or card products. This means there can be several possible matches for the same 6-digit BIN.
 
-For 6-digit BIN lookups, our model attempts to select the most relevant result for you automatically. It considers contextual information such as your previous lookup patterns and other signals, including the geographic location from which your API requests originate.
+For 6-digit BIN lookups, our model attempts to select the most relevant result for you automatically when there are multiple matches. It considers contextual information such as your previous lookup patterns and other signals, including the geographic location from which your API requests originate.
 
 Although this works well in most cases, the automatically selected result may not always be the one you expect — particularly if you are processing cards from customers in multiple countries.
 
