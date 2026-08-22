@@ -32,7 +32,7 @@ For 6-digit BIN lookups, our model attempts to select the most relevant result f
 
 Although this works well in most cases, the automatically selected result may not always be the one you expect — particularly if you are processing cards from customers in multiple countries.
 
-If you only have a 6-digit BIN and know the expected country, you can optionally specify the **preferred country** using its two-letter country code. This overrides our automatic country preference and gives matching BIN ranges from your specified country higher precedence.
+If you only have a 6-digit BIN and know the expected country, you can optionally specify the **preferred country** using its two-letter country code. This overrides our sort by relevancy and gives matching BIN ranges from your specified country higher precedence.
 
 For example, a standard lookup:
 
@@ -46,10 +46,11 @@ To prefer matching ranges from Australia:
 https://data.handyapi.com/bin/535316/AU
 ```
 
-In this example, AU tells the API to give preference to Australian matches rather than relying on our automatic selection.
+In this example, AU tells the API to give preference to Australian issuers rather than relying on our automatic selection.
 
 For the highest accuracy, we still recommend using the full 8-digit BIN whenever available.
 
+Important: Never send the full credit card number. Only send the BIN/IIN digits required for the lookup.
 
 ## API KEY to be sent in the x-api-key header
 
